@@ -126,7 +126,7 @@ setTimeout(()=>{
 
 setTimeout(()=>{
   const cx=innerWidth/2, cy=innerHeight/2;
-  burst(cx,cy,210);
+  burst(cx,cy,55);
   setTimeout(()=>burst(cx-110,cy-70,70),240);
   setTimeout(()=>burst(cx+110,cy-70,70),420);
   setTimeout(()=>burst(cx,cy-135,110),620);
@@ -135,7 +135,7 @@ setTimeout(()=>{
 setInterval(()=>{
   const x=Math.random()*innerWidth;
   const y=Math.random()*innerHeight*.82;
-  for(let i=0;i<7;i++) particles.push(new Particle(x,y,false));
+  for(let i=0;i<2;i++) particles.push(new Particle(x,y,false));
 },560);
 
 setInterval(()=>{
@@ -157,7 +157,7 @@ function spawnSymbol(){
   document.body.appendChild(el);
   setTimeout(()=>el.remove(),(dur+.4)*1000);
 }
-setInterval(spawnSymbol,620);
+setInterval(spawnSymbol,2200);
 for(let i=0;i<7;i++) setTimeout(spawnSymbol,i*180);
 
 function scriptureGlow(){
@@ -174,7 +174,7 @@ setInterval(scriptureGlow,5200);
 setTimeout(scriptureGlow,2600);
 
 document.addEventListener('click',e=>{
-  burst(e.clientX,e.clientY,72);
+  burst(e.clientX,e.clientY,18);
   const halo=document.createElement('div');
   halo.className='click-blessing';
   halo.style.left=e.clientX+'px';
