@@ -96,89 +96,79 @@ body::after{content:"";position:fixed;inset:0;background-image:linear-gradient(4
 @media (min-width:700px){.invite-wrap{padding:14px}.invite-card{width:min(500px,calc(100vw - 1.5rem));height:calc(100dvh - 32px)}.invite-outer{margin:6px}.inv-body{padding:clamp(.35rem,1.1vh,.55rem) 1.12rem clamp(.25rem,1vh,.45rem)}.invite-outer::before{background:linear-gradient(180deg,rgba(255,247,236,.50),rgba(255,239,217,.58)),radial-gradient(circle at 50% 20%,rgba(216,170,71,.12),transparent 34%)}.verse,.intro,.intro-sub,.love-box,.det-box,.rsvp{background:rgba(255,247,236,.46);border-radius:8px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.photo-strip{animation:none!important}}
 
-/* OPTIMISATION MOBILE STABLE */
+/* MOBILE AVEC EFFETS (OPTIMISÉ) */
 @media (max-width:520px), (pointer:coarse) {
-  #sparkle-canvas,
+
+  #sparkle-canvas {
+    opacity: .7;
+  }
+
+  /* ON GARDE LES EFFETS MAIS PLUS LÉGERS */
   .pulse-ring,
   .gold-orbit,
   .covenant-ring,
-  .holy-rays,
-  .float-symbol,
-  .scripture-glow,
-  .click-blessing {
-    display: none !important;
+  .holy-rays {
+    opacity: .6;
+    transform: scale(.85);
   }
 
   .invite-card::before,
   .invite-card::after {
-    display: none !important;
+    opacity: .2;
+    filter: blur(10px);
   }
 
   .invite-outer {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  .invite-outer::after,
-  .det-box::before,
-  .african-header::after,
-  .african-footer::after {
-    animation: none !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 
   .photo-strip {
-    animation-duration: 70s !important;
+    animation-duration: 45s;
   }
 
   .card-photo-bg img {
-    animation: none !important;
-    opacity: .28 !important;
-    filter: none !important;
-    transform: none !important;
+    animation-duration: 35s;
+    filter: blur(.2px) saturate(.95);
   }
 
-  .card-photo-bg img:not(:first-child) {
-    display: none !important;
+  .cross-glow {
+    opacity: .35;
+    animation-duration: 6s;
   }
 
-  .dove-flight,
-  .scripture-ribbon,
-  .halo-crown {
-    display: none !important;
+  .divine-light {
+    opacity: .55;
+    animation-duration: 8s;
   }
 
-  .cross-glow,
-  .divine-light,
+  .dove-flight {
+    opacity: .7;
+    animation-duration: 14s;
+  }
+
   .kente-seg,
   .accent-block,
-  .div-dot,
+  .div-dot {
+    animation-duration: 4s;
+  }
+
   .det-box,
   .love-box,
   .hashtag,
-  .name,
+  .name {
+    animation-duration: 5s;
+  }
+
   .text-shimmer {
-    animation: none !important;
+    animation-duration: 1.2s, 5s;
   }
 
-  .name,
-  .text-reveal,
-  .intro,
-  .intro-sub,
-  .et,
-  .love-ref,
-  .rsvp-txt,
-  .soli,
-  .line-reveal span,
-  .count-pop {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
-
+  /* TYPEWRITER CORRIGÉ MOBILE */
   .type-text {
-    white-space: normal !important;
-    width: auto !important;
-    border-right: none !important;
-    animation: none !important;
+    white-space: normal;
+    width: auto;
+    border-right: none;
+    animation: textReveal 1s ease 1s both;
   }
 }
