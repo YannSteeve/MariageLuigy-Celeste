@@ -96,79 +96,89 @@ body::after{content:"";position:fixed;inset:0;background-image:linear-gradient(4
 @media (min-width:700px){.invite-wrap{padding:14px}.invite-card{width:min(500px,calc(100vw - 1.5rem));height:calc(100dvh - 32px)}.invite-outer{margin:6px}.inv-body{padding:clamp(.35rem,1.1vh,.55rem) 1.12rem clamp(.25rem,1vh,.45rem)}.invite-outer::before{background:linear-gradient(180deg,rgba(255,247,236,.50),rgba(255,239,217,.58)),radial-gradient(circle at 50% 20%,rgba(216,170,71,.12),transparent 34%)}.verse,.intro,.intro-sub,.love-box,.det-box,.rsvp{background:rgba(255,247,236,.46);border-radius:8px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.photo-strip{animation:none!important}}
 
-/* MOBILE AVEC EFFETS (OPTIMISÉ) */
+/* MOBILE FLUIDE + BEAU (ANTI-LAG) */
 @media (max-width:520px), (pointer:coarse) {
 
-  #sparkle-canvas {
-    opacity: .7;
+  /* SCROLL FIX */
+  html, body {
+    overflow: auto;
   }
 
-  /* ON GARDE LES EFFETS MAIS PLUS LÉGERS */
+  .invite-wrap {
+    align-items: flex-start;
+    padding: 10px 6px 90px;
+    overflow-y: auto;
+  }
+
+  .invite-card {
+    height: auto;
+    max-height: none;
+  }
+
+  /* 🔥 SUPPRIME LES GROS LAGS */
   .pulse-ring,
   .gold-orbit,
   .covenant-ring,
-  .holy-rays {
-    opacity: .6;
-    transform: scale(.85);
-  }
-
+  .holy-rays,
   .invite-card::before,
-  .invite-card::after {
-    opacity: .2;
-    filter: blur(10px);
+  .invite-card::after,
+  .divine-light,
+  .scripture-glow {
+    display: none !important;
   }
 
-  .invite-outer {
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-  }
-
-  .photo-strip {
-    animation-duration: 45s;
-  }
-
-  .card-photo-bg img {
-    animation-duration: 35s;
-    filter: blur(.2px) saturate(.95);
-  }
-
-  .cross-glow {
-    opacity: .35;
-    animation-duration: 6s;
-  }
-
-  .divine-light {
-    opacity: .55;
-    animation-duration: 8s;
-  }
-
-  .dove-flight {
-    opacity: .7;
-    animation-duration: 14s;
-  }
-
+  /* 🔥 ANIMATIONS LOURDES OFF */
   .kente-seg,
   .accent-block,
-  .div-dot {
-    animation-duration: 4s;
-  }
-
+  .div-dot,
   .det-box,
   .love-box,
   .hashtag,
-  .name {
-    animation-duration: 5s;
+  .name,
+  .text-shimmer,
+  .cross-glow {
+    animation: none !important;
   }
 
-  .text-shimmer {
-    animation-duration: 1.2s, 5s;
+  /* 🔥 IMAGE FIX (très important) */
+  .card-photo-bg img {
+    animation: none !important;
+    opacity: .25;
+    transform: none;
+    filter: none;
   }
 
-  /* TYPEWRITER CORRIGÉ MOBILE */
+  .card-photo-bg img:not(:first-child) {
+    display: none;
+  }
+
+  /* 🔥 GARDE UN PEU DE VIE MAIS LÉGER */
+  .dove-flight {
+    animation-duration: 18s;
+    opacity: .6;
+  }
+
+  /* TEXTE PROPRE */
+  .name,
+  .text-reveal,
+  .intro,
+  .intro-sub,
+  .et,
+  .love-ref,
+  .rsvp-txt,
+  .soli,
+  .line-reveal span,
+  .count-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* TYPEWRITER FIX */
   .type-text {
     white-space: normal;
     width: auto;
     border-right: none;
-    animation: textReveal 1s ease 1s both;
+    animation: none;
   }
 }
