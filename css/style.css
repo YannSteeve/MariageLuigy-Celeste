@@ -618,37 +618,38 @@ body::after {
 }
 
 .african-header {
-    padding: 5px 12px 6px;
-    border-bottom: 2px solid var(--gold);
+    padding: 4px 12px 3px;
+    border-bottom: 1.5px solid var(--gold);
 }
 
 .header-subtitle {
     font-family: "Cormorant Garamond", Georgia, serif;
     font-style: italic;
-    font-size: clamp(9px, 1.15vh, 11px);
+    font-size: clamp(8px, 1vh, 10px);
     font-weight: 600;
     color: var(--gold-soft);
-    letter-spacing: 0.22em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    margin: 0 0 4px;
-    opacity: 0.88;
+    margin: 2px 0 0;
+    opacity: 0.8;
+    line-height: 1;
 }
 
 .african-footer {
-    padding: 6px 0;
-    border-top: 2px solid var(--gold);
+    padding: 4px 0;
+    border-top: 1.5px solid var(--gold);
 }
 
 .geo-row {
     display: flex;
     justify-content: center;
-    gap: 6px;
-    margin-bottom: 4px;
+    gap: 5px;
+    margin-bottom: 2px;
 }
 
 .geo-dia {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--gold-soft);
     transform: rotate(45deg);
     margin-top: 2px;
@@ -657,21 +658,23 @@ body::after {
 .geo-tri {
     width: 0;
     height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid var(--gold-soft);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--gold-soft);
 }
 
 .geo-tri.down {
-    border-top: 10px solid var(--gold-soft);
+    border-top: 8px solid var(--gold-soft);
     border-bottom: none;
 }
 
 .cross-line {
     color: var(--gold-soft);
-    font-size: 14px;
-    letter-spacing: 5px;
-    line-height: 1.2;
+    font-size: 11px;
+    letter-spacing: 6px;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1px;
 }
 
 .inv-body {
@@ -1210,17 +1213,17 @@ body::after {
     }
 
     .african-header {
-        padding: 4px 10px 3px;
+        padding: 3px 8px 2px;
     }
 
     .header-subtitle {
-        font-size: 9px;
-        letter-spacing: 0.18em;
-        margin-bottom: 3px;
+        font-size: 8px;
+        letter-spacing: 0.2em;
+        margin-top: 2px;
     }
 
     .african-footer {
-        padding: 3px 0;
+        padding: 2px 0;
     }
 
     .geo-row {
