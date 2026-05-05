@@ -618,8 +618,20 @@ body::after {
 }
 
 .african-header {
-    padding: 7px 12px 6px;
+    padding: 5px 12px 6px;
     border-bottom: 2px solid var(--gold);
+}
+
+.header-subtitle {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(9px, 1.15vh, 11px);
+    font-weight: 600;
+    color: var(--gold-soft);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+    opacity: 0.88;
 }
 
 .african-footer {
@@ -1199,6 +1211,12 @@ body::after {
 
     .african-header {
         padding: 4px 10px 3px;
+    }
+
+    .header-subtitle {
+        font-size: 9px;
+        letter-spacing: 0.18em;
+        margin-bottom: 3px;
     }
 
     .african-footer {
