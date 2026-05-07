@@ -1736,16 +1736,26 @@ body::after {
     transition: none !important;
 }
 
-/* 2. Restaurer uniquement le diaporama de fond */
+/* 2. Restaurer les deux diaporamas */
+
+/* Photos en fondu dans la carte */
 .card-photo-bg img {
     animation: cardSlideshow 36s infinite !important;
     opacity: 0;
+}
+
+/* Bande de photos qui défile derrière la carte */
+.photo-strip {
+    animation: slide 80s linear infinite !important;
 }
 
 @media (max-width: 520px), (pointer: coarse) {
     .card-photo-bg img {
         animation: cardSlideshowMobile 42s infinite !important;
         transform: none;
+    }
+    .photo-strip {
+        animation: slide 90s linear infinite !important;
     }
 }
 
